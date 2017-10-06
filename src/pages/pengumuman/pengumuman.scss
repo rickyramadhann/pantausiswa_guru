@@ -1,0 +1,22 @@
+page-pengumuman {
+	.cardpengumuman h2
+	{
+		font-size: 16px !important;
+		font-weight: bold;
+		background-color: map-get($colors, primary);
+		color:#fff !important;
+		padding: 10px;
+	}
+
+	#notifications-badge {
+            background-color: #f53d3d;
+            position: absolute;
+            top: -4px;
+            right: -5px;
+            border-radius: 20%;
+            color: #fff !important;
+        }
+
+    .judul{text-align: center;
+    }
+}

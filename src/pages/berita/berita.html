@@ -1,0 +1,41 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Berita</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content
+			pullingIcon="arrow-dropdown"
+			pullingText="Pull to refresh"
+			refreshingSpinner="circles"
+			refreshingText="Memuat...">
+		</ion-refresher-content>
+	</ion-refresher>
+	<ion-card *ngFor="let data of databerita" no-padding>
+		<img src="http://pantausiswa.xyz/uploads/{{data.image}}"/>
+		<ion-card-content>
+			<ion-card-title>
+				{{ data.title }}
+			</ion-card-title>
+			<p>{{data.created_at | moment}}</p>
+			<p class="content-berita">{{data.content | truncate : 100 }}</p>
+			<button ion-button padding outline block (click)="kebacaberita(data)" color="atas">Baca Berita</button>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-infinite-scroll (ionInfinite)="loadmore($event)">
+		<ion-infinite-scroll-content 
+			loadingSpinner="bubbles"
+			loadingText="Loading more data...">
+		</ion-infinite-scroll-content>
+</ion-infinite-scroll>
+	<!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		<ion-infinite-scroll-content
+			loadingSpinner="bubbles"
+			loadingText="Loading more data...">
+		</ion-infinite-scroll-content>
+	</ion-infinite-scroll> -->
+
+</ion-content>

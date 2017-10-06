@@ -1,0 +1,45 @@
+<ion-header>
+
+	<ion-navbar color="primary">
+		<ion-title>Tambah Tugas</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="closeModal()">X</button>
+		</ion-buttons>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<ion-list>
+		<ion-item>
+			<ion-label>Kelas</ion-label>
+			<ion-select [(ngModel)]="frmtugas.id_kelas">
+				<ion-option *ngFor="let item of kelas" value="{{item.idkelas}}">{{item.namakelas}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-label>Mata Pelajaran</ion-label>
+			<ion-select [(ngModel)]="frmtugas.id_matpel">
+				<ion-option *ngFor="let item of matpel" value="{{item.idmatpel}}">{{item.namamatpel}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-textarea fz-elastic [(ngModel)]="frmtugas.materi" placeholder="Judul Materi"></ion-textarea>
+		</ion-item>
+		<ion-item>
+			<ion-textarea fz-elastic [(ngModel)]="frmtugas.keterangan" placeholder="Keterangan"></ion-textarea>
+		</ion-item>
+		<ion-item>
+			<ion-label>Tanggal</ion-label>
+			<ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="frmtugas.tanggal" placeholder="30/12/2017"></ion-datetime>
+		</ion-item>
+		<ion-item>
+			<ion-label>Jam</ion-label>
+			<ion-datetime displayFormat="HH:mm" [(ngModel)]="frmtugas.jam" placeholder="23:59"></ion-datetime>
+		</ion-item>
+		<ion-item>
+			<button ion-button block padding (click)="kirimtugas()">Kirim</button>
+		</ion-item>
+	</ion-list>
+</ion-content>

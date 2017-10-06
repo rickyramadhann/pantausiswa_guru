@@ -1,0 +1,92 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Absensi</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="kirimabsensi()">
+				<ion-icon name="send"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-item>
+			<ion-label>Pilih Kelas</ion-label>
+			<ion-select [(ngModel)]="frmabsensi.kelas">
+				<ion-option *ngFor="let item of kelas" value="{{item.idkelas}}">{{item.namakelas}}</ion-option>
+			</ion-select>
+		</ion-item>
+		
+		<ion-item>
+			<ion-label>Mata Pelajaran</ion-label>
+			<ion-select [(ngModel)]="frmabsensi.matpel">
+				<ion-option *ngFor="let item of matpel" value="{{item.idmatpel}}">{{item.namamatpel}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<button ion-button block padding (click)="tampilsiswa()">Tampilkan</button>
+		</ion-item>
+		
+	</ion-list>
+	<ion-list *ngIf="buttonClicked">
+		<ion-item>
+			<ion-grid>
+				<ion-row>
+					<ion-col col-1>
+						<h2>No</h2>
+					</ion-col>
+					<ion-col col-6>
+						<h2>Nama</h2>
+					</ion-col>
+					<ion-col col-1 class="hadir">
+						<h2>H</h2>
+					</ion-col>
+					<ion-col col-1 class="sakit">
+						<h2>S</h2>
+					</ion-col>
+					<ion-col col-1 class="izin">
+						<h2>I</h2>
+					</ion-col>
+					<ion-col col-1 class="alpha">
+						<h2>A</h2>
+					</ion-col>
+				</ion-row>
+				<ion-row radio-group *ngFor="let item of datasiswa;let i=index" [(ngModel)]="frmabsensi.keterangan[i]">
+					<ion-col col-2 class="lbllagi">
+						<ion-item>
+							<p>{{i+1}}</p>
+						</ion-item>
+					</ion-col>
+					<ion-col col-5  class="label lblbaru">
+						<ion-item style="text-align: left !important;">
+							<p>{{item.name}}</p>
+						</ion-item>
+					</ion-col>
+					<ion-col class="rdo" col-1>
+						<ion-item>
+							<ion-radio value="hadir"></ion-radio>
+						</ion-item>
+					</ion-col>
+					<ion-col class="rdo"  col-1>
+						<ion-item>
+							<ion-radio value="sakit"></ion-radio>
+						</ion-item>
+					</ion-col>
+					<ion-col class="rdo"  col-1>
+						<ion-item>
+							<ion-radio value="izin"></ion-radio>
+						</ion-item>
+					</ion-col>
+					<ion-col class="rdo"  col-1>
+						<ion-item>
+							<ion-radio value="alpha"></ion-radio>
+						</ion-item>
+					</ion-col>
+					
+				</ion-row>
+			</ion-grid>
+		</ion-item>
+	</ion-list>
+	
+</ion-content>

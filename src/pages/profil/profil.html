@@ -1,0 +1,43 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Profil</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="presentPopover($event)">
+				<ion-icon name="more"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<ion-item class="headernav">
+		<div class="circular--landscape" item-center>
+			<img src="http://pantausiswa.xyz/uploads/{{photo}}" />
+		</div>
+		<p>{{nama}}</p>
+	</ion-item>
+	<ion-item>
+		<ion-icon name="information-circle" item-start></ion-icon>
+		<p>NIP: <span>{{nip}}</span></p>
+	</ion-item>
+
+	<ion-item>
+		<ion-icon name="at" item-start></ion-icon>
+		<p>Email: <span>{{email}}</span></p>
+	</ion-item>
+	<ion-item>
+		<ion-icon name="pin" item-start></ion-icon>
+		<p>Alamat: <span>{{alamat}}</span></p>
+	</ion-item>
+
+	<ion-item>
+		<ion-icon name="ios-calendar" item-start></ion-icon>
+		<p>Tanggal lahir: <span>{{tgl_lahir}}</span></p>
+	</ion-item>
+
+	<ion-item>
+		<ion-icon name="call" item-start></ion-icon>
+		<p>Telepon Ortu: <span>{{telp}}</span></p>
+	</ion-item>
+</ion-content>

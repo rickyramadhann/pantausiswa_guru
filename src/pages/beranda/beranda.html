@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Pantau Siswa</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="gambar-header">
+    <img src="img/header.PNG">
+  </div>
+  <ion-grid padding>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="keabsensi()">
+          <ion-avatar>
+            <img src="img/ic_absen.png">
+          </ion-avatar>
+          <p style="text-align: center !important;">Absensi</p>
+        </ion-card>
+      </ion-col>  
+      <ion-col>
+        <ion-card (click)="kenilai()">
+          <ion-avatar>
+            <img src="img/ic_nilai.png">
+          </ion-avatar>
+          <p style="text-align: center !important;">Nilai</p>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="ketugas()">
+          <ion-avatar>
+            <img src="img/ic_tugas.png">
+          </ion-avatar>
+          <p style="text-align: center !important;">Tugas</p>
+        </ion-card>
+      </ion-col>    
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="keberita()">
+          <ion-avatar>
+            <img src="img/ic_berita.png">
+          </ion-avatar>
+          <p style="text-align: center !important;">Berita</p>
+        </ion-card>
+      </ion-col>  
+      <ion-col>
+        <ion-card (click)="kepengumuman()">
+          <ion-avatar>
+            <img src="img/ic_info.png">
+          </ion-avatar>
+          <p style="text-align: center !important;">Info</p>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="kejadwal()">
+          <ion-avatar>
+            <img src="img/ic_jadwal.png">
+          </ion-avatar>
+          <p style="text-align: center !important;">Jadwal</p>
+        </ion-card>
+      </ion-col>    
+    </ion-row>
+  </ion-grid>
+</ion-content>

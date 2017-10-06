@@ -1,0 +1,47 @@
+page-absensi {
+	.hadir,.izin,.sakit,.alpha{
+		color: #fff;
+		text-align: center;
+		margin-left: 5px;		
+	}
+
+	.hadir{
+		background-color:  green;
+	}
+
+	.izin{
+		background-color:  blue;
+	}
+
+	.sakit{
+		background-color:  orange;
+	}
+
+
+	.alpha{
+		background-color: red;
+	}
+
+	ion-col .col{
+		margin: auto !important;
+	}
+
+	.rdo,.label{
+		padding: 0px !important;
+		margin-right: 3px !important;
+	}
+
+	.lblbaru{
+		margin-right: 30px !important;
+	}
+
+	.item-md{
+		padding-left: 10px !important;
+	}
+
+	.lbllagi{
+		flex: 0 0 7.66667%;
+		padding: 0px !important;
+	}
+
+}
