@@ -24,6 +24,8 @@ import { Popover } from '../pages/popover/popover';
 import { Tambahtugas } from '../pages/tambahtugas/tambahtugas';
 import { Nilai } from '../pages/nilai/nilai';
 import { Nilaip } from '../pages/nilaip/nilaip';
+import { Nilaik } from '../pages/nilaik/nilaik';
+import { Nilais } from '../pages/nilais/nilais';
 
 import { Absensi } from '../pages/absensi/absensi';
 import { Pesan } from '../pages/pesan/pesan';
@@ -59,6 +61,8 @@ import { HttpModule } from '@angular/http';
     Tambahtugas,
     Nilai,
     Nilaip,
+    Nilaik,
+    Nilais,
     ],
     imports: [
     BrowserModule, HttpModule,FormsModule,
@@ -85,6 +89,8 @@ import { HttpModule } from '@angular/http';
     Tambahtugas,
     Nilai,
     Nilaip,
+    Nilaik,
+    Nilais,
     ],
     providers: [
     StatusBar,

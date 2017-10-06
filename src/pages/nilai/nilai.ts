@@ -4,6 +4,8 @@ import { Storage } from '@ionic/storage';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Nilaip} from '../nilaip/nilaip';
+import {Nilaik} from '../nilaik/nilaik';
+import {Nilais} from '../nilais/nilais';
 //import * as moment from 'moment';
 
 /**
@@ -28,6 +30,17 @@ import {Nilaip} from '../nilaip/nilaip';
  	kenilaip(){
  		this.navCtrl.push(Nilaip,{
  			jenis:"Kompetensi Pengetahuan Dasar"
+ 		});
+ 	}
+
+ 	kenilaik(){
+ 		this.navCtrl.push(Nilaik,{
+ 			jenis:"Kompetensi Keterampilan Dasar"
+ 		});
+ 	}
+ 	kenilais(){
+ 		this.navCtrl.push(Nilais,{
+ 			jenis:"Kompetensi Keterampilan Sikap"
  		});
  	}
 

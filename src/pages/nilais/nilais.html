@@ -1,0 +1,70 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Nilai Sikap</ion-title>
+		<!-- <ion-buttons end>
+			<button ion-button icon-only (click)="kirimnilaip()">
+				<ion-icon name="send"></ion-icon>
+			</button>
+		</ion-buttons> -->
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-slides>
+		<ion-slide>
+			<ion-list>
+				<ion-item>
+					<ion-label>Kelas</ion-label>
+					<ion-select [(ngModel)]="frmnilais.kelas">
+						<ion-option *ngFor="let item of kelas" value="{{item.idkelas}}">{{item.namakelas}}</ion-option>
+					</ion-select>
+				</ion-item>
+				<ion-item>
+					<ion-label>Mata Pelajaran</ion-label>
+					<ion-select [(ngModel)]="frmnilais.matpel">
+						<ion-option *ngFor="let item of matpel" value="{{item.idmatpel}}">{{item.namamatpel}}</ion-option>
+					</ion-select>
+				</ion-item>
+				<ion-item>
+					<ion-label>Kategori</ion-label>
+					<ion-select [(ngModel)]="frmnilais.kategori">
+						<ion-option  value="spiritual">Spiritual</ion-option>
+						<ion-option  value="sosial">Sosial</ion-option>
+					</ion-select>
+				</ion-item>
+				<ion-item>
+					<button ion-button block padding (click)="slideNext()">Lanjut</button>
+				</ion-item>
+			</ion-list>
+		</ion-slide>
+		<ion-slide>
+			<ion-list radio-group [(ngModel)]="frmnilais.kode">
+				<ion-card *ngFor="let item of x">
+					<ion-grid>
+						<ion-row>
+							<ion-col col-11>
+								<p style="text-align: left !important;">{{item.kode_kompetensi}}</p>
+							</ion-col>
+							<ion-col >	
+								<ion-radio value="{{item.kode}}" item-end></ion-radio>
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+				</ion-card>
+				<button ion-button block padding (click)="lanjut()" >Lanjut</button>
+			</ion-list>
+		</ion-slide>
+		
+		<ion-slide>
+			<ion-list>
+				<ion-item *ngFor="let item of y;let i=index">
+					<p item-start>{{item.name}}</p>
+					<ion-input placeholder="0-100" type="tel" maxlength="3" item-end [(ngModel)]="frmnilais.nilai[i]"></ion-input>
+				</ion-item>
+				<ion-item>
+					<button ion-button block padding (click)="kirim()" >kirim</button>
+				</ion-item>
+			</ion-list>
+		</ion-slide>
+	</ion-slides>
+</ion-content>
